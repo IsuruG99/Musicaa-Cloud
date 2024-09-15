@@ -12,10 +12,10 @@ def homepage_decorator(func):
 class HomePage(QWidget):
     def __init__(self):
         super().__init__()
-        self.initUI()
+        self.init_ui()
 
     @homepage_decorator
-    def initUI(self):
+    def init_ui(self):
         mainLayout = QVBoxLayout()
         mainLayout.setContentsMargins(20, 20, 20, 20)
         gridLayout = QGridLayout()
