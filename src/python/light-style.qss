@@ -1,0 +1,70 @@
+/* style.qss */
+
+/* General application styling */
+* {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* QLabel styling */
+QLabel {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* QPushButton styling */
+QPushButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+}
+
+/* QLineEdit styling */
+QLineEdit {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* QTabWidget styling */
+QTabWidget::pane {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+QTabBar::tab {
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+QTabBar::tab:selected {
+    background: #d0d0d0;
+    margin-bottom: -1px;
+}
+
+/* QMainWindow styling */
+QMainWindow {
+    background-color: #f0f0f0;
+}
+
+/* QGridLayout spacing */
+QGridLayout {
+    margin: 10px;
+    spacing: 10px;
+}
