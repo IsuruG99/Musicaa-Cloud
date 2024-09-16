@@ -73,3 +73,22 @@ QGridLayout {
     margin: 10px;
     spacing: 10px;
 }
+
+/* QTableWidget styling */
+QTableWidget {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    gridline-color: #555555;
+}
+
+QHeaderView::section {
+    background-color: #444444;
+    color: #ffffff;
+    padding: 5px;
+    border: 1px solid #555555;
+}
+
+QTableCornerButton::section {
+    background-color: #444444;
+    border: 1px solid #555555;
+}

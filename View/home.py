@@ -13,8 +13,6 @@ def homepage_decorator(func):
     return wrapper
 
 class HomePage(QWidget):
-    dirList: QListWidget = None
-
     def __init__(self):
         super().__init__()
         self.init_ui()
@@ -69,6 +67,4 @@ class HomePage(QWidget):
 
         mainLayout.addWidget(splitter)
         self.setLayout(mainLayout)
-        self.setWindowTitle('Musicaa!')
-        self.setGeometry(100, 100, 800, 600)
 
