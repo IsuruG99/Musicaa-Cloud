@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0537f949-8607-48e7-afcb-ac645c15196a" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/Controller/directoryReader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/homeController.py" afterDir="false" />
+    <list default="true" id="0537f949-8607-48e7-afcb-ac645c15196a" name="Changes" comment="Implementing Base Home Page &amp; Directory List.">
+      <change afterPath="$PROJECT_DIR$/Controller/musicReader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/directoryReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/directoryReader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/homeController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/homeController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/home.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,7 @@
       <workItem from="1726385653464" duration="3584000" />
       <workItem from="1726389259273" duration="121000" />
       <workItem from="1726389391802" duration="6925000" />
-      <workItem from="1726459543178" duration="10343000" />
+      <workItem from="1726459543178" duration="14277000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project">
       <option name="closed" value="true" />
@@ -161,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726394431763</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implementing Base Home Page &amp; Directory List.">
+      <option name="closed" value="true" />
+      <created>1726471934191</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726471934191</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,9 +205,10 @@
     <MESSAGE value="Initial Project" />
     <MESSAGE value="Rearrange File Structure" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="Implementing Base Home Page &amp; Directory List." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing Base Home Page &amp; Directory List." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Musicaa$main.coverage" NAME="main Coverage Results" MODIFIED="1726471664568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Musicaa$main.coverage" NAME="main Coverage Results" MODIFIED="1726475648232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

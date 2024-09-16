@@ -57,3 +57,5 @@ def list_view(qlist: QListWidget) -> None:
     qlist.clear()
     for uri in uris:
         qlist.addItem(uri)
+
+

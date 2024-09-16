@@ -2,7 +2,8 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QTabWidget, QWidget
 from PyQt5.QtCore import QFile, QTextStream
 from View import home
-from Controller import directoryReader
+from Controller import directoryReader, musicReader
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -33,6 +34,7 @@ def main():
 
     # Load the directory reader
     directoryReader.get_file()
+    musicReader.load_music_files()
 
     # Load the stylesheet
     file = QFile("dark-style.qss")
