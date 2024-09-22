@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QTabWidget, 
 from PyQt5.QtCore import QFile, QTextStream
 from View import home
 from View import detail
-from Controller import directoryReader, musicReader
+from Reader import directoryReader, musicReader
 
 
 class MainWindow(QMainWindow):

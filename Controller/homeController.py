@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QListWidget
-from Controller import directoryReader, musicReader
+from Reader import directoryReader, musicReader
 
 
 def button_clicked(parent: QWidget, sign: str, qlist: QListWidget) -> None:

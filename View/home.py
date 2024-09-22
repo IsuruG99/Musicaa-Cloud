@@ -1,9 +1,7 @@
-import sys
-
-from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QSplitter, QGridLayout, QListWidget, QPushButton, QLabel
 from PyQt5.QtCore import Qt
-from Controller import homeController, directoryReader
+from Controller import homeController
+
 
 def homepage_decorator(func):
     def wrapper(self, *args, **kwargs):
