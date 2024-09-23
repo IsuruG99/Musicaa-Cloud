@@ -5,8 +5,11 @@ from Controller import detailController
 
 
 class DetailPage(QWidget):
+    _instance = None
     def __init__(self):
         super().__init__()
+        DetailPage._instance = self
+        self.table = None
         self.init_ui()
 
     def init_ui(self) -> None:
@@ -18,12 +21,12 @@ class DetailPage(QWidget):
         # Top section - List and Buttons
         topWidget = QWidget()
         topLayout = QGridLayout()
-        table = QTableWidget()
-        detailController.manage_music_files(table)
-        topLayout.addWidget(table, 0, 0)
+        self.table = QTableWidget()
+        self.refresh_table()
+        topLayout.addWidget(self.table, 0, 0)
         buttonLayout = QHBoxLayout()
         addButton = QPushButton("Refresh")
-        addButton.clicked.connect(lambda: detailController.manage_music_files(table))
+        addButton.clicked.connect(lambda: detailController.manage_music_files(self.table))
         buttonLayout.addWidget(addButton)
         topLayout.addLayout(buttonLayout, 1, 0)  # Buttons next to list
         topWidget.setLayout(topLayout)
@@ -45,3 +48,10 @@ class DetailPage(QWidget):
 
         mainLayout.addWidget(splitter)
         self.setLayout(mainLayout)
+
+    @classmethod
+    def refresh_table(cls) -> None:
+        if cls._instance and cls._instance.table is not None:
+            detailController.manage_music_files(cls._instance.table)
+
+

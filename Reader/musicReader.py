@@ -1,5 +1,6 @@
 import json
 import os
+from contextlib import nullcontext
 
 from Reader import directoryReader
 
@@ -16,10 +17,16 @@ def save_music_json(music_tags: dict) -> None:
     with open(JSON_PATH, 'w') as f:
         json.dump(music_tags, f, indent=4)
 
-def add_tag(music_file: str, tag: str) -> None:
+def manage_tag(music_file: str, tag: str) -> bool:
     if not tag or not music_file:
         return
-    music_tags = load_music_json()
+    try:
+        music_tags = load_music_json()
+    except json.decoder.JSONDecodeError:
+        return False
+    if not load_music_files():
+        return False
+
     music_files = load_music_files()
     if music_file in music_files:
         if tag not in music_tags[music_file]:
@@ -27,15 +34,14 @@ def add_tag(music_file: str, tag: str) -> None:
         else:
             music_tags[music_file].remove(tag)
         save_music_json(music_tags)
+        return True
 
-def remove_tag(music_file: str, tag: str) -> None:
-    music_tags = load_music_json()
-    if music_file in music_tags and tag in music_tags[music_file]:
-        music_tags[music_file].remove(tag)
-    save_music_json(music_tags)
+def update_music_json(music_files: dict) -> bool:
+    try:
+        music_tags = load_music_json()
+    except json.decoder.JSONDecodeError:
+        return False
 
-def update_music_json(music_files: dict) -> None:
-    music_tags = load_music_json()
     for music_file in music_files:
         if music_file not in music_tags:
             music_tags[music_file] = []
@@ -43,6 +49,7 @@ def update_music_json(music_files: dict) -> None:
         if music_file not in music_files:
             del music_tags[music_file]
     save_music_json(music_tags)
+    return True
 
 def load_music_files() -> dict:
     music_files = {}
@@ -51,8 +58,11 @@ def load_music_files() -> dict:
         for root, _, files in os.walk(directory):
             for file in files:
                 if file.endswith(('.mp3', '.wav', '.flac')):
-                    music_files[os.path.join(root, file)] = []
-    update_music_json(music_files)
+                    normalized_path = os.path.normpath(os.path.join(root, file))
+                    music_files[normalized_path] = []
+    if not update_music_json(music_files):
+        print("Error updating music files.")
+        return music_files
     music_tags = load_music_json()
     for music_file in music_files:
         music_files[music_file] = music_tags.get(music_file, [])

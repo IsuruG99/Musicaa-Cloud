@@ -1,12 +1,13 @@
 from PyQt5.QtWidgets import QTableWidgetItem, QHeaderView, QHBoxLayout, QPushButton, QLineEdit, QDialog, QWidget, \
-    QTableWidget
+    QTableWidget, QCompleter
 from PyQt5.QtCore import Qt
-from Reader.musicReader import load_music_files, add_tag
+from Reader.musicReader import load_music_files, manage_tag
 
 
-def manage_tag(name: str, tags: str) -> None:
-    if not name or not tags:
+def tag_dialog_box(name: str, tags: str) -> None:
+    if not name or tags is None:
         return
+
     dialog_box = QDialog()
     dialog_box.setWindowTitle('Add Tag')
     dialog_box.setFixedSize(600, 100)
@@ -16,9 +17,14 @@ def manage_tag(name: str, tags: str) -> None:
     tag_input.setPlaceholderText('Enter a tag')
     tag_input.setFixedSize(400, 50)
 
+    # Set up QCompleter
+    completer = QCompleter(list(tags))
+    completer.setCaseSensitivity(Qt.CaseInsensitive)
+    tag_input.setCompleter(completer)
+
     add_button = QPushButton('Add')
     add_button.setFixedSize(100, 50)
-    add_button.clicked.connect(lambda: add_tag(name, tag_input.text()))
+    add_button.clicked.connect(lambda: tag_change(name, tag_input.text(), dialog_box))
 
     layout = QHBoxLayout()
     layout.addWidget(tag_input)
@@ -52,8 +58,8 @@ def manage_music_files(table: QTableWidget) -> None:
 
         button_widget = QWidget()
         add_button = QPushButton('+')
-        add_button.setFixedWidth(30)
-        add_button.clicked.connect(lambda _, mf=music_file, ti=tags: manage_tag(mf, ti))
+        add_button.setFixedWidth(50)
+        add_button.clicked.connect(lambda _, mf=music_file, ti=tags: tag_dialog_box(mf, ti))
 
         layout = QHBoxLayout(button_widget)
         layout.addWidget(add_button)
@@ -68,3 +74,9 @@ def manage_music_files(table: QTableWidget) -> None:
     table.setColumnWidth(0, int(table.width() * 0.4))
     table.setColumnWidth(1, int(table.width() * 0.5))
     table.setColumnWidth(2, int(table.width() * 0.1))
+
+def tag_change(name: str, tag: str, dialog_box: QDialog) -> None:
+    if manage_tag(name, tag):
+        from View.detail import DetailPage
+        DetailPage.refresh_table()
+        dialog_box.close()
