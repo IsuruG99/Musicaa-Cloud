@@ -1,6 +1,8 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QSplitter, QGridLayout, QListWidget, QPushButton, QLabel
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QSplitter, QGridLayout, QListWidget, QPushButton, QLabel, QHBoxLayout, \
+    QSlider, QLineEdit, QSpacerItem, QSizePolicy
 from PyQt5.QtCore import Qt
-from Controller import homeController
+
+from Component.ScrollingLabel import ScrollingLabel
 
 
 def homepage_decorator(func):
@@ -18,51 +20,57 @@ class HomePage(QWidget):
     @homepage_decorator
     def init_ui(self) -> None:
         mainLayout = QVBoxLayout()
-        mainLayout.setContentsMargins(10,10,10,10)
+        mainLayout.setContentsMargins(10, 10, 10, 10)
 
-        # Creating a vertical splitter to divide space between the list/buttons and future grid layout
-        splitter = QSplitter(Qt.Vertical)
+        # Top section - Music list with search
+        topLayout = QVBoxLayout()
+        searchLayout = QHBoxLayout()
 
-        # Top section - List and Buttons
-        topWidget = QWidget()
-        topLayout = QGridLayout()
+        searchBox = QLineEdit()  # Search bar
+        searchBtn = QPushButton("Search")  # Search button
 
-        list = QListWidget()
-        list.addItem("List Fetching Failed.")
-        #set size to only display like 2 items, rest scroll
-        list.setMaximumHeight(100)
-        topLayout.addWidget(list, 1, 0)
-        homeController.manage_dir_list(list)
+        searchLayout.addWidget(searchBox)
+        searchLayout.addWidget(searchBtn)
 
-        buttonLayout = QVBoxLayout()
-        addButton = QPushButton("+")
-        addButton.clicked.connect(lambda: homeController.button_clicked(self, "+", list))
-        buttonLayout.addWidget(addButton)
+        musicList = QListWidget()  # List of songs
 
-        removeButton = QPushButton("-")
-        removeButton.clicked.connect(lambda: homeController.button_clicked(self, "-", list))
-        buttonLayout.addWidget(removeButton)
+        topLayout.addLayout(searchLayout)
+        topLayout.addWidget(musicList)
 
-        topLayout.addLayout(buttonLayout, 1, 1)  # Buttons next to list
-        topWidget.setLayout(topLayout)
+        # Bottom section - Play controls (Prev, Play/Pause, Next) and bars
+        controlLayout = QHBoxLayout()
 
-        # Bottom section - Placeholder for future use
-        bottomWidget = QWidget()
-        bottomLayout = QVBoxLayout()
+        prevBtn = QPushButton("⏮")  # Previous button
+        playPauseBtn = QPushButton("⏯")  # Play/Pause button (image will change)
+        nextBtn = QPushButton("⏭")  # Next button
 
-        placeholderLabel = QLabel("GRIDLAYOUT FOR FUTURE USE")
-        placeholderLabel.setAlignment(Qt.AlignCenter)
-        bottomLayout.addWidget(placeholderLabel)
-        bottomWidget.setLayout(bottomLayout)
+        controlLayout.addWidget(prevBtn)
+        controlLayout.addWidget(playPauseBtn)
+        controlLayout.addWidget(nextBtn)
 
-        # Add widgets to splitter
-        splitter.addWidget(topWidget)
-        splitter.addWidget(bottomWidget)
+        # Play length bar and volume controls
+        barLayout = QHBoxLayout()
+        nowPlayingLabel = ScrollingLabel("Now playing: SONG NAME")
+        barLayout.addWidget(nowPlayingLabel)
 
-        # Set proportions (30% for top section, 70% for bottom)
-        splitter.setStretchFactor(0, 1)
-        splitter.setStretchFactor(1, 7)
+        playLengthBar = QSlider(Qt.Horizontal)
+        volumeLabel = QLabel("Vol:")
+        volumeSlider = QSlider(Qt.Horizontal)
 
-        mainLayout.addWidget(splitter)
+        barLayout.addSpacerItem(QSpacerItem(10, 0, QSizePolicy.Expanding, QSizePolicy.Minimum))
+        barLayout.addWidget(playLengthBar, stretch=5)
+        barLayout.addSpacerItem(QSpacerItem(10, 0, QSizePolicy.Expanding, QSizePolicy.Minimum))
+        barLayout.addWidget(volumeLabel)
+        barLayout.addWidget(volumeSlider, stretch=1)
+
+        # Set fixed width for volume controls to ensure they take minimal space
+        volumeLabel.setFixedWidth(50)
+        volumeSlider.setFixedWidth(100)
+
+        # Adding sections to the main layout
+        mainLayout.addLayout(topLayout)
+        mainLayout.addLayout(controlLayout)
+        mainLayout.addLayout(barLayout)
+
         self.setLayout(mainLayout)
 

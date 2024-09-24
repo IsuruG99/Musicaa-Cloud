@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QTabWidget, QWidget
 from PyQt5.QtCore import QFile, QTextStream
-from View import home
+from View import home, directory
 from View import detail
 from Reader import directoryReader, musicReader
 
@@ -30,6 +30,7 @@ class TabWidget(QTabWidget):
     def init_tabs(self):
         self.addTab(home.HomePage(), "Home")
         self.addTab(detail.DetailPage(), "Details")
+        self.addTab(directory.DirPage(), "Folders")
 
 def main():
     app = QApplication(sys.argv)

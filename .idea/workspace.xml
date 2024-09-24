@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0537f949-8607-48e7-afcb-ac645c15196a" name="Changes" comment="Detail Page: Tag Management">
+    <list default="true" id="0537f949-8607-48e7-afcb-ac645c15196a" name="Changes" comment="Detail Page: Tag Management&#10;Added Page Refresh &amp; normalized the way musicFiles Json's path is stored.">
+      <change afterPath="$PROJECT_DIR$/Component/ScrollingLabel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/directory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/detailController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/detailController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reader/musicReader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Reader/musicReader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/homeController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/dirController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/home.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,8 +118,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PY-242.21829.153" />
-        <option value="bundled-python-sdk-464836ebc622-b74155a9e76b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.21829.153" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.22855.92" />
+        <option value="bundled-python-sdk-b068d85d1acf-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.22855.92" />
       </set>
     </attachedChunks>
   </component>
@@ -139,7 +141,10 @@
       <workItem from="1726994090318" duration="100000" />
       <workItem from="1726994216374" duration="596000" />
       <workItem from="1727006415698" duration="8672000" />
-      <workItem from="1727076081288" duration="4817000" />
+      <workItem from="1727076081288" duration="4935000" />
+      <workItem from="1727155541043" duration="180000" />
+      <workItem from="1727155837902" duration="1347000" />
+      <workItem from="1727167640522" duration="3117000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project">
       <option name="closed" value="true" />
@@ -205,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727015128325</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Detail Page: Tag Management&#10;Added Page Refresh &amp; normalized the way musicFiles Json's path is stored.">
+      <option name="closed" value="true" />
+      <created>1727080989575</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1727080989575</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,9 +259,10 @@
     <MESSAGE value="Detail Page Structure" />
     <MESSAGE value="Small Abstraction: Moved Table Creation to Controller package." />
     <MESSAGE value="Detail Page: Tag Management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Detail Page: Tag Management" />
+    <MESSAGE value="Detail Page: Tag Management&#10;Added Page Refresh &amp; normalized the way musicFiles Json's path is stored." />
+    <option name="LAST_COMMIT_MESSAGE" value="Detail Page: Tag Management&#10;Added Page Refresh &amp; normalized the way musicFiles Json's path is stored." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Musicaa$main.coverage" NAME="main Coverage Results" MODIFIED="1727079746408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Musicaa$main.coverage" NAME="main Coverage Results" MODIFIED="1727170760818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
