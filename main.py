@@ -1,10 +1,13 @@
 import sys
+
+import pygame
 from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QTabWidget, QWidget
 from PyQt5.QtCore import QFile, QTextStream
 from View import home, directory
 from View import detail
-from Reader import directoryReader, musicReader
+from Reader import directoryReader, musicReader, playlistReader
 
+current_index = 0
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -34,8 +37,11 @@ class TabWidget(QTabWidget):
 
 def main():
     app = QApplication(sys.argv)
+    pygame.mixer.init()
+    pygame.display.init()
 
     # Load the directory reader
+    playlistReader.get_file()
     directoryReader.get_file()
     musicReader.load_music_files()
 

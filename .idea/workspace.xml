@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0537f949-8607-48e7-afcb-ac645c15196a" name="Changes" comment="Detail Page: Tag Management&#10;Added Page Refresh &amp; normalized the way musicFiles Json's path is stored.">
-      <change afterPath="$PROJECT_DIR$/Component/ScrollingLabel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/directory.py" afterDir="false" />
+    <list default="true" id="0537f949-8607-48e7-afcb-ac645c15196a" name="Changes" comment="Home Page: Basic Layout">
+      <change afterPath="$PROJECT_DIR$/Reader/playlistReader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/homeController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/dirController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Component/ScrollingLabel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Component/ScrollingLabel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/homeController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/homeController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/home.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/home.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -144,7 +144,7 @@
       <workItem from="1727076081288" duration="4935000" />
       <workItem from="1727155541043" duration="180000" />
       <workItem from="1727155837902" duration="1347000" />
-      <workItem from="1727167640522" duration="3117000" />
+      <workItem from="1727167640522" duration="12418000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Project">
       <option name="closed" value="true" />
@@ -218,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727080989575</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Home Page: Basic Layout">
+      <option name="closed" value="true" />
+      <created>1727171039211</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1727171039211</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,9 +268,10 @@
     <MESSAGE value="Small Abstraction: Moved Table Creation to Controller package." />
     <MESSAGE value="Detail Page: Tag Management" />
     <MESSAGE value="Detail Page: Tag Management&#10;Added Page Refresh &amp; normalized the way musicFiles Json's path is stored." />
-    <option name="LAST_COMMIT_MESSAGE" value="Detail Page: Tag Management&#10;Added Page Refresh &amp; normalized the way musicFiles Json's path is stored." />
+    <MESSAGE value="Home Page: Basic Layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Home Page: Basic Layout" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Musicaa$main.coverage" NAME="main Coverage Results" MODIFIED="1727170760818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Musicaa$main.coverage" NAME="main Coverage Results" MODIFIED="1727179400002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -4,7 +4,7 @@ from PyQt5.QtCore import Qt, QTimer
 class ScrollingLabel(QLabel):
     def __init__(self, text, parent=None):
         super().__init__(text, parent)
-        self.setFixedWidth(200)  # Set the desired width
+        self.setFixedWidth(200)
         self.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.scroll_text)
