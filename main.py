@@ -8,6 +8,7 @@ from View import detail
 from Reader import directoryReader, musicReader, playlistReader
 
 current_index = 0
+playState = False
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -37,7 +38,7 @@ class TabWidget(QTabWidget):
 
 def main():
     app = QApplication(sys.argv)
-    pygame.mixer.init()
+    pygame.mixer.init(buffer=4096)
     pygame.display.init()
 
     # Load the directory reader
